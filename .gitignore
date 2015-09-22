@@ -1,0 +1,7 @@
+/build
+/tmp
+*.sublime-workspace
+.DS_STORE
+aws-credentials.conf
+node_modules
+npm-debug.log
