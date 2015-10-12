@@ -2761,7 +2761,6 @@
 /* Footer */
 
 	#footer {
-		min-height: 100vh;
 		padding: 0 0 6em 0;
 		position: relative;
 		text-align: center;
