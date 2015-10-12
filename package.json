@@ -8,11 +8,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/mjlescano/micayfede.git"
+    "url": "git@github.com:mjlescano/micayfede.git"
   },
   "author": "mjlescano",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/mjlescano/micayfede#readme",
+  "homepage": "http://micayfede.com.ar",
   "devDependencies": {
     "s3-cli": "^0.13.0"
   }
