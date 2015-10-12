@@ -1,4 +1,3 @@
-var options = require('commander')
 var mergeTrees = require('broccoli-merge-trees')
 var Funnel = require('broccoli-funnel')
 var browserify = require('broccoli-fast-browserify')
@@ -7,17 +6,18 @@ var stylus = require('broccoli-stylus-single')
 var autoprefixer = require('broccoli-autoprefixer')
 var assetRev = require('broccoli-asset-rev')
 
-options.option('build').option('serve').parse(process.argv)
+var doCompress = process.env.BROCCOLI_COMPRESS === 'true'
+var doServe = process.env.BROCCOLI_SERVE === 'true'
 
 var app = 'app'
 
 var js = browserify(new Funnel(app, { include: ['js/**/*.js']}), {
   browserify: {
-    debug: options.serve
+    debug: doServe
   },
   bundles: {
     'js/app.js': {
-      transform: options.serve ? undefined : 'uglifyify',
+      transform: doCompress ? 'uglifyify' : undefined,
       entryPoints: ['js/index.js']
     }
   }
@@ -27,19 +27,19 @@ var css = stylus(
   [new Funnel(app, { include: ['css/**/*.styl']})],
   'css/index.styl',
   'css/app.css',
-  { compress: !options.serve }
+  { compress: doCompress }
 )
 
 css = autoprefixer(css)
 
 var html = jade(new Funnel(app, { include: ['*.jade']}), {
-  pretty: options.serve
+  pretty: !doCompress
 })
 
 var img = new Funnel(app, { include: ['img/**/*']})
 
 var tree = mergeTrees([js, css, html, img])
 
-if (!options.serve) tree = assetRev(tree)
+if (doCompress) tree = assetRev(tree)
 
 module.exports = tree
