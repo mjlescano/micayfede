@@ -4,9 +4,7 @@
   "description": "Ω",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rm -rf build && broccoli build build",
-    "serve": "broccoli serve",
-    "deploy": "npm run build && s3-cli sync --delete-removed ./build s3://micayfede.com.ar/ --config aws-credentials.conf --region sa-east-1"
+    "deploy": "s3-cli sync --delete-removed ./app s3://micayfede.com.ar/ --config aws-credentials.conf --region sa-east-1"
   },
   "repository": {
     "type": "git",
@@ -14,20 +12,5 @@
   },
   "author": "mjlescano",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/mjlescano/micayfede#readme",
-  "devDependencies": {
-    "broccoli": "^0.16.8",
-    "broccoli-asset-rev": "^2.2.0",
-    "broccoli-autoprefixer": "^4.0.0",
-    "broccoli-cli": "^1.0.0",
-    "broccoli-fast-browserify": "^0.2.9",
-    "broccoli-funnel": "^0.2.8",
-    "broccoli-jade": "^1.0.1",
-    "broccoli-merge-trees": "^0.2.3",
-    "broccoli-stylus-single": "^0.4.1",
-    "commander": "^2.8.1",
-    "common-youtube": "^1.0.0",
-    "s3-cli": "^0.13.0",
-    "uglifyify": "^3.0.1"
-  }
+  "homepage": "https://bitbucket.org/mjlescano/micayfede#readme"
 }
