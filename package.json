@@ -12,5 +12,8 @@
   },
   "author": "mjlescano",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/mjlescano/micayfede#readme"
+  "homepage": "https://bitbucket.org/mjlescano/micayfede#readme",
+  "devDependencies": {
+    "s3-cli": "^0.13.0"
+  }
 }
