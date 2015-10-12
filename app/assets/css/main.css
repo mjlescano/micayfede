@@ -1311,11 +1311,17 @@
 
 	html {
 		background-color: #313a3d;
-		background-attachment: fixed,						fixed;
-		background-image: url("images/overlay.png"), url("../../images/bg.jpg");
-		background-position: top left,					center center;
-		background-repeat: repeat,						none;
-		background-size: auto,						cover;
+		background-attachment: fixed, fixed;
+		background-image: url('images/overlay.png'), url('../../images/bg.jpg');
+		background-position: top left, center center;
+		background-repeat: repeat, none;
+		background-size: auto, cover;
+	}
+
+	@media screen and (orientation: portrait) {
+		html {
+			background-image: url('images/overlay.png'), url('../../images/bg-portrait.jpg');
+		}
 	}
 
 	html.is-loading body *, html.is-loading body *:before, html.is-loading body *:after {
