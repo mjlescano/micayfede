@@ -2643,7 +2643,6 @@
 			.main .container .content {
 				display: inline-block;
 				margin-right: 1px;
-				vertical-align: middle;
 				width: calc(100% - 10px);
 			}
 
