@@ -3055,19 +3055,19 @@
 
 /* Google Maps Iframe */
 
-.google-maps-iframe {
+.responsive-iframe {
 	position: relative;
 
 }
-	.google-maps-iframe:after {
+	.responsive-iframe:after {
 		content: '';
 		display: block;
-		padding-top: 100%;
+		padding-top: 72%;
 		line-height: 0;
 		font-size: 0.1px;
 	}
 
-	.google-maps-iframe iframe {
+	.responsive-iframe iframe {
 		position: absolute;
 		left: 0;
 		top: 0;
